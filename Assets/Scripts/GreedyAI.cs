@@ -18,18 +18,20 @@ public class GreedyAI : MonoBehaviour
     void Start() {
         rb = GetComponent<Rigidbody>();
         direction = Vector3.right;
-
         ball = GameObject.Find("Ball");
     }
 
     void FixedUpdate() {
         Vector3 ballDirection = ball.GetComponent<Ball>().GetDirection();
-        if (IsBallHeadingTowardsMe()) {
-            MoveTowardsBall();
-        }
-        else {
-            MoveTowardsCenter();
-        }
+        /* TODO 1.1: Uncomment below */
+
+        // if (IsBallHeadingTowardsMe()) {
+        //     MoveTowardsBall();
+        // }
+        // else {
+        //     MoveTowardsCenter();
+        // }
+
         rb.velocity = direction.normalized * 100 * (speed * Time.fixedDeltaTime);
     }
 
@@ -39,17 +41,25 @@ public class GreedyAI : MonoBehaviour
     }
 
     void MoveTowardsBall() {
-        direction = ball.transform.position.x > this.transform.position.x 
-            ? Vector3.right
-            : Vector3.left;
+        /* TODO 1.2: Move the enemy AI towards the ball by setting the direction vector. 
+            Use Vector3.right and Vector3.left as aliases for Vector3(1, 0, 0) and Vector3(-1, 0, 0) respectively.
+        */
+        direction = ball.transform.position.x ? transform.position.x 
+            ? Vector3.???
+            : Vector3.???
     }
 
     void MoveTowardsCenter() {
-        if (-0.2f < this.transform.position.x)
-            direction = Vector3.left;
-        else if (this.transform.position.x < 0.2f)
-            direction = Vector3.right;
+        /* TODO 1.3: Move the enemy AI back to the center of the screen by setting the direction vector.
+            Set the direction according to the x position of the enemy AI.
+
+            HINT: Look above for how to read the position.
+        */
+        if (-0.2f < ???.x)
+            direction = Vector3.???;
+        else if (???.x < 0.2f)
+            direction = Vector3.???;
         else
-            direction = Vector3.zero;
+            direction = Vector3.zero; // do not move if already in center
     }
 }
