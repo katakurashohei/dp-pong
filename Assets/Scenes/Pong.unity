@@ -264,7 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8726262043e8abd4e8da5617f27c465d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedboostPrefab: {fileID: 4956617712129541857, guid: e475005c4723ff545bcac50f01431dc6, type: 3}
+  speedboostPrefab: {fileID: 0}
 --- !u!1 &741509532
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,6 +17,6 @@ public class Spawner : MonoBehaviour {
 
     void SpawnSpeedboost() {
         Vector3 spawnPosition = new Vector3(Random.Range(spawnBox[0].x, spawnBox[1].x), 0, Random.Range(spawnBox[0].z, spawnBox[1].z));
-        Instantiate(speedboostPrefab, spawnPosition, Quaternion.identity);
+        //Instantiate(speedboostPrefab, spawnPosition, Quaternion.identity);
     }
 }
