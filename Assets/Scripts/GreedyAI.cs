@@ -44,9 +44,10 @@ public class GreedyAI : MonoBehaviour
         /* TODO 1.2: Move the enemy AI towards the ball by setting the direction vector. 
             Use Vector3.right and Vector3.left as aliases for Vector3(1, 0, 0) and Vector3(-1, 0, 0) respectively.
         */
-        direction = ball.transform.position.x ? transform.position.x 
-            ? Vector3.???
-            : Vector3.???
+
+        //direction = ball.transform.position.x ? transform.position.x 
+        //    ? Vector3.???
+        //    : Vector3.???
     }
 
     void MoveTowardsCenter() {
@@ -55,11 +56,12 @@ public class GreedyAI : MonoBehaviour
 
             HINT: Look above for how to read the position.
         */
-        if (-0.2f < ???.x)
-            direction = Vector3.???;
-        else if (???.x < 0.2f)
-            direction = Vector3.???;
-        else
-            direction = Vector3.zero; // do not move if already in center
+
+        //if (-0.2f < ???.x)
+        //    direction = Vector3.???;
+        //else if (???.x < 0.2f)
+        //    direction = Vector3.???;
+        //else
+        //    direction = Vector3.zero; // do not move if already in center
     }
 }
