@@ -13,7 +13,7 @@
 - **Alt + RMB**: Zoom in and out
 
 
-### Scripts: Implementing a smarter AI opponent
+### ex1: Scripts: Implementing a smarter AI opponent
 <!-- Perhaps remove first part or better, do this in class -->
 1. Understand the DumbAI
     - Select the Enemy game object and find the Dumb AI script.
@@ -27,7 +27,7 @@
 3. Save the file and save the scene, then play the game to check your solution.
 
 
-### Prefabs: Spawning powerups midgame
+### ex2: Prefabs: Spawning powerups midgame
 1. Create the speedboost powerup game object which we want to save as a prefab.
     - Right-click in the Hierarchy window and select `3D Object > Plane`. This will create a new game object.
     - Rename this game object to "Speedboost".
