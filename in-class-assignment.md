@@ -34,6 +34,7 @@
     - In the Inspector window assign the Tag "Speedboost" to this game object.
     - Use the Rect tool (Shortcut: T) to shape the object. Alternatively, set the scale values in the Transform component e.g. x:0.1 y:1 z:0.15 work well.
     - In the Mesh Collider component, enable "Convex" and "Is Trigger" options
+    - Optionally, change the appearance of the powerup by selecting a new material element `Mesh Renderer > Materials > ⦿` 
 2. Create storage  `Assets/Prefabs`.
     - In the Project window, right-click and select `Create > Folder`, and name it "Prefabs".
 3. Save the speedboost powerup as a prefab.
