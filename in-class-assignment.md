@@ -15,13 +15,13 @@
 
 ### Scripts: Implementing a smarter AI opponent
 <!-- Perhaps remove first part or better, do this in class -->
-1. Understand the DumbA I™
+1. Understand the DumbAI
     - Select the Enemy game object and find the Dumb AI script.
     - Open it by double-clicking on the Script entry or using "…" and selecting `Edit Script`.
     - Why is movement written in `FixedUpdate()` as opposed to `Update()`?
     - How is moving in a straight-line and bouncing off walls implemented? 
-2. Implementing Greed yAI™
-    - Remove the Greedy AI script from the Enemy object via `"…" > Remove Component`.
+2. Implementing GreedyAI
+    - Remove the DumbAI script from the Enemy object via `"…" > Remove Component`.
     - In the Project window, navigate to `Assets/Scripts` and attach the GreedyAI script to the Enemy, then open it.
     - Fill out the TODOs in `GreedyAI.cs` to make the Enemy track the position of the ball, and move back to a central position after hitting the ball. 
 3. Save the file and save the scene, then play the game to check your solution.

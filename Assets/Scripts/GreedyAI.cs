@@ -57,9 +57,9 @@ public class GreedyAI : MonoBehaviour
             HINT: Look above for how to read the position.
         */
 
-        //if (-0.2f < ???.x)
+        //if (0.2f < ???.x)
         //    direction = Vector3.???;
-        //else if (???.x < 0.2f)
+        //else if (???.x < -0.2f)
         //    direction = Vector3.???;
         //else
         //    direction = Vector3.zero; // do not move if already in center

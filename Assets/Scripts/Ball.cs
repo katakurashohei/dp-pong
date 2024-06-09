@@ -43,16 +43,19 @@ public class Ball : MonoBehaviour {
     }
 
     Vector3 ComputeReflection(Collision other) {
-        Vector3 normal = other.GetContact(0).normal.normalized;
-        Vector3 collisionPoint = other.GetContact(0).point;
-        
-        float hitFactor = (collisionPoint.x - other.transform.position.x) / other.collider.bounds.size.x;
-        hitFactor = Mathf.Max(-0.4f, Mathf.Min(0.4f, hitFactor)); // disallow very steep angles
-        hitFactor = normal.z < 0 ? hitFactor * (-1): hitFactor;
-        Debug.Log(hitFactor);
-        Debug.Log(normal);
+        Vector3 reflection = Vector3.Reflect(direction, other.GetContact(0).normal);
+        /*
+         * TODO 1: Uncomment below (Ctrl/CMD+K+U), save and run the game.
+         * <brains> How is the ball reflected? And, how is this computed?
+         */
 
-        Vector3 reflection = Quaternion.Euler(0, hitFactor * 180, 0) * new Vector3(0, 0, normal.z);
+        // Vector3 normal = other.GetContact(0).normal.normalized;
+        // Vector3 collisionPoint = other.GetContact(0).point;
+
+        // float hitFactor = (collisionPoint.x - other.transform.position.x) / other.collider.bounds.size.x;
+        // hitFactor = Mathf.Max(-0.35f, Mathf.Min(0.35f, hitFactor)); // disallow very steep angles
+        // hitFactor = normal.z < 0 ? hitFactor * (-1) : hitFactor;
+        // reflection = Quaternion.Euler(0, hitFactor * 180, 0) * new Vector3(0, 0, normal.z);
         return reflection;
     }
 
@@ -71,11 +74,11 @@ public class Ball : MonoBehaviour {
         else if (other.collider.CompareTag("Wall")) {
             soundEffects.PlayWallClip();
         }
-        else if (other.collider.CompareTag("PlayerScoreLine")) {
+        else if (other.collider.CompareTag("EnemyScoreLine")) {
             soundEffects.PlayPositiveScoreClip();
             isOutOfBounds = true;
         }
-        else if (other.collider.CompareTag("EnemyScoreLine")) {
+        else if (other.collider.CompareTag("PlayerScoreLine")) {
             soundEffects.PlayScoreClip();
             isOutOfBounds = true;
         }
