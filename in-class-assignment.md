@@ -41,7 +41,8 @@
     - Drag the speedboost game object from the Hierarchy window to the `Assets/Prefabs` folder in the Project window. Et voilà, we created a new prefab.
     - Delete the peedboost game object from the Hierarchy.
 4. Set up powerup spawning.
+    - Create an empty game object, name it "Spawner" and attach the Spawner.cs to it.
     - Select the Spawner object, which has a Spawner script attached to it.
     - Drag the speedboost prefab onto the field "Speedboost Prefab" of the Spawner script in the Inspector.
     - Now open `Spawner.cs` and uncomment the line`Instantiate(speedboostPrefab, ...)`.
-5. Save your file changes and your scene changes, and play the game.
+6. Save your file changes and your scene changes, and play the game.
