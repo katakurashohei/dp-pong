@@ -92,6 +92,7 @@
      <Compile Include="Assets/unity-dualpanto-toolkit/Assets/PantoScripts/LevelIntroducer/PantoIntroSpeaker.cs" />
      <Compile Include="Assets/unity-dualpanto-toolkit/Assets/SpeechIOForUnity/Assets/Scripts/Speech Output Core Scripts/MacOSSpeechOut.cs" />
      <Compile Include="Assets/unity-dualpanto-toolkit/Assets/PantoScripts/DualPantoSync.cs" />
+     <Compile Include="Assets/Scripts/AudioGenerator.cs" />
      <Compile Include="Assets/unity-dualpanto-toolkit/Assets/PantoScripts/IntroManager.cs" />
      <Compile Include="Assets/unity-dualpanto-toolkit/Assets/PantoScripts/LevelIntroducer/PantoIntroPause.cs" />
      <Compile Include="Assets/unity-dualpanto-toolkit/Assets/SpeechIOForUnity/Assets/Scripts/Example Speech Scripts/Advanced/DialogManager.cs" />

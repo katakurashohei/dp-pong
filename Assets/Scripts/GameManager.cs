@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using DualPantoToolkit;
@@ -5,6 +6,7 @@ using UnityEditor.VersionControl;
 using UnityEngine;
 using System.Threading.Tasks;
 using Task = System.Threading.Tasks.Task;
+using SpeechIO;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,9 +22,17 @@ public class GameManager : MonoBehaviour
     private UpperHandle _upperHandle;
     private LowerHandle _lowerHandle;
     
+    private SpeechOut _speechOut;
+    
     PantoCollider[] pantoColliders;
     
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+        _speechOut = new SpeechOut();
+    }
+
     void Start()
     {
         _upperHandle = GetComponent<UpperHandle>();
@@ -50,6 +60,8 @@ public class GameManager : MonoBehaviour
         await RenderObstacle();
         
         await Task.Delay(1000);
+        
+        await _speechOut.Speak("Introduction finished, game starts.");
         
         Instantiate(player, playerSpawn);
         Instantiate(enemy, new Vector3(0.35f, 0.0f, -5.64f), Quaternion.identity);

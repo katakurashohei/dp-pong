@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DualPantoToolkit;
+using SpeechIO;
 public class Ball : MonoBehaviour {
+    
 
     public float startingSpeed = 3f; // public attributes which can be set in the editor
     public float maxSpeed = 5f;
@@ -14,16 +16,49 @@ public class Ball : MonoBehaviour {
     private bool isOutOfBounds = false;
     private GameObject go;
     PantoHandle handle;
+    SpeechIn speechIn;
+
+    
 
     private Rigidbody rb;
     // Start is called before the first frame update
     void Start() {
+        // OPTIONAL TODO: 
+        // speechIn = new SpeechIn(onRecognized); 	
+        // speechIn.StartListening();
+        // SpeedUpListener();
+
         handle = (PantoHandle)GameObject.Find("Panto").GetComponent<LowerHandle>();
         soundEffects = GetComponent<PlayerSoundEffect>();
         rb = GetComponent<Rigidbody>();
         go = GetComponent<GameObject>();
         Reset();
     }
+    
+    public void OnApplicationQuit()
+    {
+        // OPTIONAL TODO: 
+        // speechIn.StopListening(); 
+    }
+    
+    void onRecognized(string message)
+    {
+        Debug.Log("[" + this.GetType() + "]: " + message);
+    }
+    
+    async void SpeedUpListener() {
+        string speedup = await speechIn.Listen(new string[] { "max", "faster"});
+        switch (speedup) {
+            case "max":
+                speed = maxSpeed;
+                break;
+            case "faster":
+                speed = Mathf.Min(maxSpeed, speed + 1f);
+                break;
+        }
+    }
+
+
 
     // FixedUpdate is called once per physics update
     void FixedUpdate() {
@@ -113,4 +148,7 @@ public class Ball : MonoBehaviour {
     public Vector3 GetDirection() {
         return this.direction;
     }
+    
+
+
 }
