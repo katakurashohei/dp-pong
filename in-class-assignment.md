@@ -21,7 +21,7 @@
 
 ### ex1: Introduce object
 1. attach `GameManager.cs` to `panto` game object
-2. open `GameManager.cs`, find `TODO 1` and `TODO 2`
+2. open the `GameManager.cs` file to see its source code. Do `TODO 1` and `TODO 2`. These TODOs require you to comment out code. If you don't do this nothing will happen!
 3. add `Ball`, `Enemy`, `Player` prefabs, and  each position game object from the scene hierarchy to `GameManager`
 4. input your COM port to `panto` game object's `Dual Panto Sync`
 5. connect to dualpanto and press play in the unity editor
